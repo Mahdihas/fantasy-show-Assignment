@@ -63,8 +63,11 @@ const Login = () => {
                     className="input input-bordered w-full max-w-xs" />
                 <label className="label"> <span className="label-text text-white">Forget Password?</span></label>
                 {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
-            </div>
-            <Button><span className='text-white'>Login</span></Button>
+                      </div>
+                      <div className="flex w-full justify-center text-center">
+                      <Button><span className='text-white '>Login</span></Button>
+
+                      </div>
             <div className='my-6'>
                 {loginError && <p className='text-red-600'>{loginError}</p>}
             </div>

@@ -111,7 +111,7 @@ const Register = () => {
                 })} className="input input-bordered w-full max-w-xs" />
                 {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
             </div>
-            <Button>Sign Up</Button>
+            <div className="flex w-full justify-center text-center">            <Button>Sign Up</Button></div>
           </form>
           <div className="my-4">{signUpError && <p className='text-yellow-600'>{signUpError}</p>}</div>
 
