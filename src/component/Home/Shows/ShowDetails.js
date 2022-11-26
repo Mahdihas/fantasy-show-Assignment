@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
 
 
@@ -6,9 +6,12 @@ import { useLoaderData } from 'react-router-dom'
 
 import { BsPlayCircleFill,BsPlayCircle,BsStarFill } from "react-icons/bs";
 import { addToDb } from '../../../Router/fakedb';
+import { AuthContext } from '../../../Context/UserContext';
 
 const ShowDetails = () => {
     const show = useLoaderData(); 
+
+    const {user}=useContext(AuthContext)
     const { name, genres, status, rating,runtime, language,network, averageRuntime, links, summary, original, medium, schedule, premiered
         , image } = show;
     
@@ -33,6 +36,8 @@ const ShowDetails = () => {
 
 
         const userInfo = {
+            user: user?.displayName,
+            email:user?.email,
             name:name,
             genres:genres[0],
            
@@ -105,8 +110,8 @@ const ShowDetails = () => {
 
                     <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 mt-10'>
                        
-                        {/* <input name="name" type="text" defaultValue={user?.displayName} placeholder="Your Name" className="input w-full input-bordered" />
-                        <input name="email" type="email" defaultValue={user?.email} readOnly placeholder="Email Address" className="input w-full input-bordered" /> */}
+                        <input name="name" type="text" defaultValue={user?.displayName} placeholder="Your Name" className="input w-full input-bordered" />
+                        <input name="email" type="email" defaultValue={user?.email} readOnly placeholder="Email Address" className="input w-full input-bordered" />
                         <input name="phone" type="text" placeholder="Phone Number" className="input w-full input-bordered" />
                         <br />
                         <input className='btn btn-accent w-full' type="submit" value="Submit" />
