@@ -5,6 +5,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom'
 
 import { BsPlayCircleFill,BsPlayCircle,BsStarFill } from "react-icons/bs";
+import { addToDb } from '../../../Router/fakedb';
 
 const ShowDetails = () => {
     const show = useLoaderData(); 
@@ -33,18 +34,18 @@ const ShowDetails = () => {
 
         const userInfo = {
             name:name,
-            genres:genres,
+            genres:genres[0],
            
             phone: phone,
             averageRuntime,
-            image,
+           
             premiered,
             
 
 
         }
-        console.log(userInfo);
-        
+        console.log(userInfo );
+        addToDb(JSON.stringify(userInfo))
         toast.success('Booking Stored Successfully')
 
     
