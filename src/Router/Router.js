@@ -5,6 +5,8 @@ import Blog from '../component/blog/Blog';
 import Error from "../component/error/Error";
 import Home from "../component/Home/Home";
 import ShowDetails from '../component/Home/Shows/ShowDetails';
+import Login from '../component/login/Login';
+import Register from '../component/login/Register';
 import Main from "../layout/Main";
 
 const router = createBrowserRouter([
@@ -26,6 +28,8 @@ const router = createBrowserRouter([
 
             {
                 path: '/',
+                loader:()=>fetch('https://api.tvmaze.com/search/shows?q=all'),
+
                 element:<Home></Home>
                 
             },
@@ -37,6 +41,7 @@ const router = createBrowserRouter([
                 element:<AllShow></AllShow>
                 
             },
+
             {
                 path: '/show/:id',
                           loader: ({params})=> fetch(`https://api.tvmaze.com/shows/${params.id}`),
@@ -47,6 +52,16 @@ const router = createBrowserRouter([
             {
                 path: '/blog',
                 element:<Blog></Blog>
+                
+            },
+            {
+                path: '/login',
+                element:<Login></Login>
+                
+            },
+            {
+                path: '/register',
+                element:<Register></Register>
                 
             },
 

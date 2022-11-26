@@ -14,7 +14,7 @@ const Shows = ({ movie }) => {
     console.log(show.id);
 
   return (
-    <div className="px-4 shadow-2xl" >
+    <div className="px-4 shadow-2xl container1 " >
                   
                   <Link to={`/show/${show.id}`} >  <div className="img-area1">
         

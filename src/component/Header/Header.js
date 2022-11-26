@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { FaCentos } from "react-icons/fa";
 import { FaPhoneVolume ,FaTv} from "react-icons/fa";
 import { FaBookOpen } from "react-icons/fa";
+import { AuthContext } from '../../Context/UserContext';
 
 
 
@@ -11,7 +12,14 @@ import { FaBookOpen } from "react-icons/fa";
 
 const Header = () => {
 
-  
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+        .then()
+        .catch();
+}
+
+
 
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -63,7 +71,33 @@ const Header = () => {
                 Blog
               </NavLink>
       </li>
+
+        
+
+
+    </>
+    
+    {
+              user?.uid ?
+        <>
+          
+        
+<button className='btn btn-dark sm:mx-4 my-4' onClick={handleLogOut}>Log out</button>
+<img className='w-[50px] h-[50px] rounded-full' title={user?.displayName}  src={user?.photoURL ? user.photoURL:<FaCentos></FaCentos>} alt="" />
+
+        
       </>
+                  :
+                  <>
+   <Link to='/login'><button className='btn btn-dark sm:mx-4 my-4' >Log In</button>
+</Link>
+
+
+         
+                      
+</>
+
+}
            </React.Fragment>
 
 
