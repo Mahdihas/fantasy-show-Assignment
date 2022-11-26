@@ -100,7 +100,7 @@ const Header = () => {
             <FaTv className='font-bold text-[#ff5761] text-2xl'></FaTv>
            
 
-            <span className='ml-2 text-xl text-white uppercase font-bold tracking-wide #302e2c text-shadow-lg'>
+            <span className='ml-2 sm:text-[12px] text-xl text-white uppercase font-bold tracking-wide #302e2c text-shadow-lg'>
             Fantasy <span className='text-[#ff5761] uppercase'>Show </span>
 
             </span>
@@ -151,8 +151,8 @@ const Header = () => {
             <FaTv className='font-bold text-[#ff5761] text-2xl'></FaTv>
            
 
-            <span className='ml-2 text-xl text-white uppercase font-bold tracking-wide #302e2c text-shadow-lg'>
-            Fantasy <span className='text-[#ff5761] uppercase'>Show </span>
+            <span className='ml-2 px-6 text-xl text-white uppercase font-bold tracking-wide #302e2c text-shadow-lg'>
+            Fantasy <span className='text-[#ff5761]  px-2 uppercase'>Show </span>
 
             </span>
           </Link>
