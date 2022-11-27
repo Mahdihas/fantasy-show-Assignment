@@ -5,6 +5,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { AuthContext } from '../../Context/UserContext';
 import { BsUpload } from "react-icons/bs";
 import Button from '../Button/Button';
+import Social from './Social';
 
 
 
@@ -116,8 +117,9 @@ const Register = () => {
           <div className="my-4">{signUpError && <p className='text-yellow-600'>{signUpError}</p>}</div>
 
         <p className=' text-white'>Already have an account <Link className='text-secondary' to="/login">Please Login</Link></p>
-        <div className="divider">OR</div>
-        <button className='btn btn-outline hover:bg-secondary  w-full text-white'>CONTINUE WITH GOOGLE</button>
+          <div className="divider">OR</div>
+          <Social></Social>
+          
       </div>
       <Toaster></Toaster>
 

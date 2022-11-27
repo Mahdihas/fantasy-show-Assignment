@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
 import Button from '../Button/Button';
+import Social from './Social';
 
 const Login = () => {
 
@@ -73,8 +74,8 @@ const Login = () => {
             </div>
         </form>
         <p className=' text-white'>New to Doctors Portal <Link className='text-[#3fb5b3] font-bold' to="/register">Create new Account</Link></p>
-        <div className="divider">OR</div>
-        <button className='btn btn-outline hover:bg-secondary w-full text-white'>CONTINUE WITH GOOGLE</button>
+                  <div className="divider">OR</div>
+                  <Social></Social>
     </div>
 </div>
    </div>
